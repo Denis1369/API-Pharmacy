@@ -42,9 +42,9 @@ namespace API_Pharmacy.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult LoginPost( string email, string pass)
+        public IActionResult LoginPost([FromBody] Login login)
         {
-            if (Program._context.Clients.FirstOrDefault(c => c.ClientEmail == email && c.ClientPassword == pass) == null) 
+            if (Program._context.Clients.FirstOrDefault(c => c.ClientEmail == login.email && c.ClientPassword == login.pass) == null) 
             {
                 return BadRequest("Неверный email или пароль");
             }
@@ -97,5 +97,11 @@ namespace API_Pharmacy.Controllers
 
             return Ok("Данные клиента успешно обновлены");
         }
+    }
+
+    public class Login 
+    {
+        public string email { get; set; }
+        public string pass { get; set; }
     }
 }
