@@ -27,7 +27,7 @@ public partial class PharmacyDbContext : DbContext
     public virtual DbSet<Item> Items { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("server=217.60.37.17;user=full;password=root;database=pharmacy_db", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.43-mysql")).UseLazyLoadingProxies();
+        => optionsBuilder.UseMySql("server=db;user=root;password=root;database=pharmacy_db", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.43-mysql")).UseLazyLoadingProxies();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

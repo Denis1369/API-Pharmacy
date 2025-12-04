@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Wpf_Pharmacy.Card_Control.ItemAdminControl"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="100" d:DesignWidth="500">
+    <Border Background="White" Padding="12" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="{Binding ItemImg}" Width="75" Height="75" Margin="15,0,0,0" VerticalAlignment="Top" />
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Top">
+                <TextBlock Text="{Binding ItemTitle}" FontWeight="Bold" FontSize="16" TextWrapping="Wrap"/>
+
+                <TextBlock x:Name="DescriptionTextBlock"
+                           Text="{Binding ItemDesc}"
+                           Foreground="#666"
+                           FontSize="12"
+                           TextWrapping="NoWrap"
+                           TextTrimming="WordEllipsis"
+                           MaxHeight="50"
+                           Tag="Collapsed"
+                           Margin="0,4,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <TextBlock Text="{Binding ItemPrice, StringFormat={}{0:N0} ₽}" FontSize="16" FontWeight="Bold" HorizontalAlignment="Right"/>
+                <ComboBox x:Name="StatusOnComboBox"
+          SelectedItem="{Binding ItemStatusOn, Mode=TwoWay}"
+          Width="90"
+          Margin="0,8,0,0"
+          DropDownClosed="StatusOnComboBox_DropDownClosed"/>
+                <Button x:Name="ModeButton" Width="90" Height="20" Content="Редактировать"
+                        Click="ModeButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

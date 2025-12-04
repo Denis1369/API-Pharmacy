@@ -1,0 +1,83 @@
+﻿<Window x:Class="Wpf_Pharmacy.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Вход" Height="400" Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Вход в аккаунт" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <ext:WatermarkTextBox Watermark="Электронная почта"
+                                  x:Name="EmailTextBox"
+                                  Width="300"
+                                  Height="36"
+                                  Margin="0,0,0,10"
+                                  Padding="10"
+                                  VerticalContentAlignment="Center"
+                                  Background="White"
+                                  BorderBrush="#CCCCCC"/>
+
+            <ext:WatermarkPasswordBox Watermark="Пароль"
+                                      x:Name="PasswordBox"
+                                      Width="300"
+                                      Height="36"
+                                      Margin="0,0,0,20"
+                                      Padding="10"
+                                      VerticalContentAlignment="Center"
+                                      Background="White"
+                                      BorderBrush="#CCCCCC"/>
+
+            <Button Content="Войти"
+                    Background="#00C8B8"
+                    Foreground="White"
+                    FontWeight="SemiBold"
+                    Width="300"
+                    Height="36"
+                    Cursor="Hand"
+                    Click="LoginButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="18"
+                                Padding="10,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="RegisterLinkButton"
+        Content="Нет аккаунта? Зарегистрироваться"
+        Background="Transparent"
+        Foreground="#00A050"
+        FontSize="12"
+        Cursor="Hand"
+        HorizontalAlignment="Center"
+        Margin="0,10,0,0"
+        Click="RegisterLinkButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="HomeLinkButton"
+Content="Главная"
+Background="Transparent"
+Foreground="#00A050"
+FontSize="12"
+Cursor="Hand"
+HorizontalAlignment="Center"
+Margin="0,10,0,0" Click="HomeLinkButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

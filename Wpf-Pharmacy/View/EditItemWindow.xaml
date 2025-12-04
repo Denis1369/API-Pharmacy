@@ -1,0 +1,53 @@
+﻿<Window x:Class="Wpf_Pharmacy.View.EditItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактировать товар" Height="550" Width="400">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Название:"/>
+        <TextBox x:Name="TitleTextBox" Grid.Row="1" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="2" Text="Бренд:"/>
+        <ComboBox x:Name="BrandComboBox" Grid.Row="3" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="4" Text="Описание:"/>
+        <TextBox x:Name="DescTextBox" Grid.Row="5" Margin="0,0,0,10" TextWrapping="Wrap" Height="60"/>
+
+        <TextBlock Grid.Row="6" Text="Изображение:"/>
+        <TextBox x:Name="ImgTextBox" Grid.Row="7" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="8" Text="Количество:"/>
+        <TextBox x:Name="CountTextBox" Grid.Row="9" Margin="0,0,0,10" TextAlignment="Left"/>
+
+        <TextBlock Grid.Row="10" Text="Цена:"/>
+        <TextBox x:Name="PriceTextBox" Grid.Row="11" Margin="0,0,0,10" TextAlignment="Left"/>
+
+        <TextBlock Grid.Row="12" Text="Статус (без рецепта/по рецепту):"/>
+        <ComboBox x:Name="StatusComboBox" Grid.Row="13" Margin="0,0,0,20">
+            <ComboBoxItem Content="без рецепта"/>
+            <ComboBoxItem Content="по рецепту"/>
+        </ComboBox>
+
+        <StackPanel Grid.Row="14" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="SaveButton" Content="Сохранить" Width="80" Margin="0,0,10,0" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButton" Content="Отмена" Width="80" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

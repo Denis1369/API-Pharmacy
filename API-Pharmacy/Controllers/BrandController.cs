@@ -15,7 +15,7 @@ namespace API_Pharmacy.Controllers
             return Program._context.Brands.ToList();
         }
 
-        [HttpPost("edit")]
+        [HttpPut("edit")]
         public IActionResult EditPost([FromBody] Brand editBrand)
         {
             var existingBrand = Program._context.Brands.FirstOrDefault(b => b.BrandId == editBrand.BrandId);

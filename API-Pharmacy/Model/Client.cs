@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
@@ -16,6 +17,9 @@ public partial class Client
     public string? ClientLastName { get; set; }
 
     public string? ClientName { get; set; }
+
+    [Column("client_status")]
+    public string? ClientStatus { get; set; }
 
     [JsonIgnore]
     public virtual ICollection<Basket> Baskets { get; set; } = new List<Basket>();
